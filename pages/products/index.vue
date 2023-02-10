@@ -9,12 +9,15 @@
 </template>
 
 <script setup>
+import axios from 'axios';
+
 definePageMeta({
   layout: "products",
 });
 
 // fetch the products
-const { data: products } = await useFetch("https://fakestoreapi.com/products");
+
+const { data: products } = await axios.get("https://fakestoreapi.com/products");
 
 useHead({
   title: 'Nuxt Lesson | Merch',
